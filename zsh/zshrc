@@ -79,8 +79,15 @@ export CPPFLAGS="-I/usr/local/opt/node@8/include"
 # Bison
 export PATH="/usr/local/opt/bison/bin:$PATH"
 
+# metasploit
+export PATH="$PATH:/opt/metasploit-framework/bin"
+
 if [ -e ~/.config_file/zsh/export_env ]; then
   source ~/.config_file/zsh/export_env
+fi
+
+if [ -e ~/.config_file/zsh/aliasrc ]; then
+  source ~/.config_file/zsh/aliasrc
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
