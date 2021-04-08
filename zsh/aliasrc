@@ -5,7 +5,7 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 # 文件隐藏和显示
 alias showall="defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder"
-alias hidefile="defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder"
+alias hideall="defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder"
 
 # 展示python文件
 alias lp="ls *.py"
