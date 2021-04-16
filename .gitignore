@@ -2,4 +2,4 @@
 bak/
 dev.vim
 .DS_Store
-/zsh/export_env
+export_env
