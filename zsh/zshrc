@@ -36,8 +36,7 @@ source ~/.zinit/bin/zinit.zsh
  zinit snippet OMZ::plugins/git/git.plugin.zsh
 
 # 加载主题
-zinit ice depth=1;
-zinit light romkatv/powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # SoftWare Config
 
