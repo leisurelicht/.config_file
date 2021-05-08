@@ -33,12 +33,15 @@ let g:_python2_path = ''
 let g:_python3_path = '/usr/local/bin/python3'
 
 " perl path
+" default: empty
 let g:_perl_path = ''
 
 
 " node path
-" let g:_node_path = '/usr/local/bin/neovim-node-host'
+" default: empty
 let g:_node_path = ''
+" let g:_node_path = '/usr/local/bin/neovim-node-host'
 
 " ruby path
+" default: empty
 let g:_ruby_path = ''
