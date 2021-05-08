@@ -44,11 +44,12 @@ else
   echo "----> Command pip2 is already installed"
 fi
 
-if ! command -v npm >/dev/null 2>&1; then
-  echo "----> Use brew to install npm"
+if ! command -v yarn >/dev/null 2>&1; then
+  echo "----> Use brew to install yarn"
   brew install node
+  brew install yarn
 else
-  echo "----> Command npm is already installed"
+  echo "----> Command yarn is already installed"
 fi
 
 if ! command -v go >/dev/null 2>&1; then
@@ -94,8 +95,8 @@ $(brew --prefix)/bin/pip3 install --upgrade -r $install_path/installs/pip3_insta
 echo "====> Use gem to install package"
 install_from_file $install_path/installs/gem_install gem install
 
-echo "====> Use npm to install package"
-install_from_file $install_path/installs/npm_install npm install -g
+echo "====> Use yarn to install package"
+install_from_file $install_path/installs/yarn_install yarn install -g
 
 echo "====> Use go to install package"
 install_from_file $install_path/installs/go_install go get -u
