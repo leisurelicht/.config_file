@@ -20,6 +20,6 @@ catch
   call Entry#Begin()
 endtry
 
-if has('nvim')
+if (has('nvim') && exists('g:space_vim_dark_background'))
   colorscheme space-vim-dark
 endif

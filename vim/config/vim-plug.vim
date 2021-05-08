@@ -16,18 +16,16 @@ call plugs#load#Base('git')
 call plugs#load#Base('surround')
 call plugs#load#Base('fzf')
 call plugs#load#Base('tabular')
+call plugs#load#Base('startify')
+call plugs#load#Base('nerdtree')
 
 if has('nvim')
-  call plugs#load#Base('which-key')
-  call plugs#load#Base('themes')
-  call plugs#load#Base('nerdtree')
-  call plugs#load#Base('devicons')
-  call plugs#load#Base('startify')
-  call plugs#load#Base('tagbar')
-  call plugs#load#Base('goyo')
-  call plugs#load#Base('undotree')
+   call plugs#load#Base('which-key')
+   call plugs#load#Base('themes')
+   call plugs#load#Base('tagbar')
+   call plugs#load#Base('undotree')
+   call plugs#load#Base('goyo')
 endif
-
 
 " just use to develop plugin
 call plugs#load#Base('dev')
@@ -35,10 +33,9 @@ call plugs#load#Base('dev')
 call plugs#language#Befor('init-module')
 
 if has('nvim')
-  call plugs#language#Befor('coc-module')
+  " call plugs#language#Befor('coc-module')
 endif
 
-call plugs#language#Befor('echodoc-module')
 call plugs#language#Befor('ultisnips-module')
 call plugs#language#Befor('ale-module')
 
@@ -50,10 +47,6 @@ call plugs#language#Enable('vim-module')
 call plugs#language#Enable('shell-module')
 call plugs#language#Enable('python-module')
 call plugs#language#Enable('go-module')
-call plugs#language#Enable('javascript-module')
-call plugs#language#Enable('vue-module')
-call plugs#language#Enable('html-module')
-" call plugs#language#Enable('raml-module')
 
 call plugs#language#After('polyglot-module')
 call plugs#language#After('indentline-module')

@@ -2,7 +2,7 @@ scriptencoding utf-8
 " Git
 "
 " ---> 文件变动
-Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify', {'on': 'NERDTree'}
 
 " ---> Git命令
 Plug 'tpope/vim-fugitive'
@@ -19,7 +19,7 @@ nnoremap <leader>gf :Gdiff<CR>
 nnoremap <leader>gd :Gdelete<CR>
 
 " ---> Commit browser
-Plug 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim', {'on': 'Gv'}
 
 nnoremap <leader>gv :Gv<CR>
 

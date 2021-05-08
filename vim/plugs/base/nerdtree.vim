@@ -1,11 +1,11 @@
 " NerdTree
 "
 " ---> nerdtree
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 let g:NERDTreeIgnore=['\.pyc$', '\~$', '^tags$']
 let g:NERDTreeShowLineNumbers = 1
-" let g:NERDTreeShowBookmarks=1
+let g:NERDTreeShowBookmarks=1
 let g:NERDTreeStatusline='NERDTree'
 
 augroup vim_enter
