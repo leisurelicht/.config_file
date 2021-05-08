@@ -20,5 +20,6 @@ catch
   call Entry#Begin()
 endtry
 
-
-colorscheme space-vim-dark
+if has('nvim')
+  colorscheme space-vim-dark
+endif

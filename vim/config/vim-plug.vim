@@ -8,31 +8,36 @@ if utils#system#OSX()
 endif
 
 call plugs#load#Base('init-module')
-call plugs#load#Base('themes')
-call plugs#load#Base('nerdtree')
-call plugs#load#Base('startify')
 call plugs#load#Base('commentary')
-call plugs#load#Base('which-key')
 call plugs#load#Base('airline')
-call plugs#load#Base('tagbar')
 call plugs#load#Base('auto-pairs')
-call plugs#load#Base('undotree')
-call plugs#load#Base('bookmarks')
-call plugs#load#Base('interestingwords')
 call plugs#load#Base('multiple-cursors')
 call plugs#load#Base('git')
 call plugs#load#Base('surround')
 call plugs#load#Base('fzf')
 call plugs#load#Base('tabular')
-call plugs#load#Base('goyo')
-call plugs#load#Base('devicons')
+
+if has('nvim')
+  call plugs#load#Base('which-key')
+  call plugs#load#Base('themes')
+  call plugs#load#Base('nerdtree')
+  call plugs#load#Base('devicons')
+  call plugs#load#Base('startify')
+  call plugs#load#Base('tagbar')
+  call plugs#load#Base('goyo')
+  call plugs#load#Base('undotree')
+endif
+
+
 " just use to develop plugin
 call plugs#load#Base('dev')
 
 call plugs#language#Befor('init-module')
+
 if has('nvim')
   call plugs#language#Befor('coc-module')
 endif
+
 call plugs#language#Befor('echodoc-module')
 call plugs#language#Befor('ultisnips-module')
 call plugs#language#Befor('ale-module')
