@@ -68,3 +68,7 @@ gvmuse() {
   gvm use $1
   source ~/.zshrc
 }
+
+# 设置代理
+alias openproxy="export ALL_PROXY=socks5://127.0.0.1:10080"
+alias closeproxy="unset ALL_PROXY"
