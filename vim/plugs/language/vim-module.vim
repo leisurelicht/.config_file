@@ -13,5 +13,5 @@ augroup end
 
 " ---> ale fixer
 if exists('g:ale_fixers')
-  let g:ale_fixers.vim = ['vint']
+  let g:ale_fixers.vim = []
 endif
