@@ -37,7 +37,8 @@ let g:_perl_path = ''
 
 
 " node path
-let g:_node_path = '/usr/local/bin/neovim-node-host'
+" let g:_node_path = '/usr/local/bin/neovim-node-host'
+let g:_node_path = ''
 
 " ruby path
 let g:_ruby_path = ''
