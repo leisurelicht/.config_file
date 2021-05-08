@@ -7,21 +7,22 @@ Plug 'mhinz/vim-signify', {'on': 'NERDTree'}
 " ---> Git命令
 Plug 'tpope/vim-fugitive'
 
-nnoremap <leader>gg :Git<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit %<CR>
-nnoremap <leader>gh :Gpush<CR>
-nnoremap <leader>gl :Gpull<CR>
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>ge :Gbedit<CR>
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gc :Git commit %<CR>
+nnoremap <leader>gh :Git push<CR>
+nnoremap <leader>gl :Git pull<CR>
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gff :Git diff<CR>
+nnoremap <leader>gft :Git difftool<CR>
 nnoremap <leader>gr :Gread<CR>
-nnoremap <leader>gf :Gdiff<CR>
-nnoremap <leader>gd :Gdelete<CR>
+nnoremap <leader>gd :GDelete<CR>
 
 " ---> Commit browser
-Plug 'junegunn/gv.vim', {'on': 'Gv'}
+Plug 'junegunn/gv.vim', {'on': 'GV'}
 
-nnoremap <leader>gv :Gv<CR>
+nnoremap <leader>gvv :GV<CR>
+nnoremap <leader>gvc :GV!<CR>
+nnoremap <leader>gvl :GV?<CR>
 
 " ---> Git Message
 Plug 'rhysd/git-messenger.vim'

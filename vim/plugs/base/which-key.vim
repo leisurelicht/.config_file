@@ -34,6 +34,14 @@ let g:which_key_map.s = {
 let g:which_key_map.g = {
       \'name': '+Git',
       \ 'm': 'GitMessenger',
+      \ 'f': {
+        \ 'name': '+Diff',
+        \ 'f': 'Diff',
+        \ 't': 'DiffTool',
+        \},
+      \ 'v': {
+        \ 'name': '+Commit Browser',
+        \},
       \}
 
 let g:which_key_map.m = {'name': '+BookMarks'}
