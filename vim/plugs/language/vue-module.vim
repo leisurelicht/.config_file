@@ -15,7 +15,6 @@ augroup end
 Plug 'posva/vim-vue', {'for': 'vue'}
 
 " ---> ale fixer
-let g:ale_fixers.vue = ['eslint',]
-
-" ---> coc
-let g:coc_global_extensions += ['coc-vetur']
+if exists('g:ale_fixers')
+  let g:ale_fixers.vue = ['eslint',]
+endif

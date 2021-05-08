@@ -11,4 +11,6 @@ augroup file_set
 augroup end
 
 " ---> ale fixer
-let g:ale_fixers.sql = ['sqlint', 'sqlfmt',]
+if exists('g:ale_fixers')
+  let g:ale_fixers.sql = ['sqlint', 'sqlfmt',]
+endif

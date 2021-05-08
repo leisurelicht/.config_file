@@ -13,9 +13,11 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ OK']
 let g:ale_completion_enabled = 1
+let g:ale_disable_lsp = 1
 
-" let g:ale_set_loclist = 0
-" let g:ale_set_quickfix = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
 " let g:ale_open_list = 1
 " " Set this if you want to.
 " " This can be useful if you are combining ALE with
@@ -23,7 +25,7 @@ let g:ale_completion_enabled = 1
 " let g:ale_keep_list_window_open = 1
 
 let g:ale_fix_on_save = g:ale_auto_fix_on_save
-let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace', 'prettier', 'eslint']}
 
 highlight ALEWarning ctermfg=236 ctermbg=182 guifg=#303030 guibg=#d7afd7
 highlight ALEError ctermfg=238 ctermbg=110 guifg=#444444 guibg=#87afd7

@@ -9,6 +9,3 @@ augroup file_set
         \ setlocal softtabstop=2 |
         \ setlocal shiftwidth=2 |
 augroup end
-
-" ---> coc
-let g:coc_global_extensions += ['coc-json']

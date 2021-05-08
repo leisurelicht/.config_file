@@ -10,5 +10,8 @@ augroup file_set
         \ setlocal shiftwidth=2 |
 augroup end
 
-" ---> coc
-let g:coc_global_extensions += ['coc-vimlsp']
+
+" ---> ale fixer
+if exists('g:ale_fixers')
+  let g:ale_fixers.vim = ['vint']
+endif

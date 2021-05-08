@@ -21,14 +21,6 @@ augroup end
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
 
 " ---> ale fixer
-let g:ale_fixers.go = ['goimports', 'gofmt']
-
-" ---> coc
-let g:coc_global_extensions += ['coc-go']
-
-if exists('CocAction')
-  augroup coc_import
-    autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-  augroup end
+if exists('g:ale_fixers')
+  let g:ale_fixers.go = ['goimports', 'gofmt']
 endif
-

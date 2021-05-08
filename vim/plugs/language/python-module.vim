@@ -30,7 +30,6 @@ augroup end
 Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
 
 " ---> ale fixer
-let g:ale_fixers.python = ['add_blank_lines_for_python_control_statements', 'isort', 'yapf', 'autopep8',]
-
-" ---> coc
-let g:coc_global_extensions += ['coc-python']
+if exists('g:ale_fixers')
+  let g:ale_fixers.python = ['add_blank_lines_for_python_control_statements', 'isort', 'yapf', 'autopep8',]
+endif

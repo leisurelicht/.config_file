@@ -108,30 +108,30 @@ xmap <silent> <C-d> <Plug>(coc-range-select)
 command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
-nnoremap <silent> <leader>cla  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>cla :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <leader>cle  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader>cle :<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent> <leader>clc  :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>clc :<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent> <leader>clo  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>clo :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <leader>cls  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <leader>cls :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <leader>clj  :<C-u>CocNext<CR>
+nnoremap <silent> <leader>clj :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <leader>clk  :<C-u>CocPrev<CR>
+nnoremap <silent> <leader>clk :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <leader>clp  :<C-u>CocListResume<CR>
+nnoremap <silent> <leader>clp :<C-u>CocListResume<CR>
 
 let g:coc_global_extensions = []

@@ -22,7 +22,6 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'othree/html5.vim', {'for': 'html'}
 
 " ---> ale fixer
+if exists('g:ale_fixers')
 let g:ale_fixers.html = ['prettier',]
-
-" ---> coc
-let g:coc_global_extensions += ['coc-html', 'coc-css']
+endif

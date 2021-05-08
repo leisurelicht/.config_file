@@ -21,4 +21,6 @@ augroup file_set
 augroup end
 
 " ---> ale fixer
-let g:ale_fixers.sh = ['shfmt',]
+if exists('g:ale_fixers')
+  let g:ale_fixers.sh = ['shfmt',]
+endif

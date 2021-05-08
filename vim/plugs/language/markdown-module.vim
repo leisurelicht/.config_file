@@ -24,7 +24,6 @@ Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install', 'for': 'mar
 let g:mkdp_auto_close = 0
 
 " ---> ale fixer
-" let g:ale_fixers.markdown = ['prettier']
-
-" ---> coc
-let g:coc_global_extensions += ['coc-markdownlint']
+if exists('g:ale_fixers')
+  let g:ale_fixers.markdown = ['prettier']
+endif

@@ -14,7 +14,6 @@ augroup end
 Plug 'chemzqm/vim-jsx-improve', {'for': 'javascript.jsx'}
 
 " ---> ale fixer
-let g:ale_fixers.html = ['eslint',' importjs', 'prettier_eslint', 'prettier_standard']
-
-" ---> coc
-let g:coc_global_extensions += ['coc-tsserver']
+if exists('g:ale_fixers')
+  let g:ale_fixers.html = ['eslint',' importjs', 'prettier_eslint', 'prettier_standard']
+endif
