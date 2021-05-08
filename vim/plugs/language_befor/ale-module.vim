@@ -1,6 +1,7 @@
 scriptencoding utf-8
 " ale
 "
+
 Plug 'w0rp/ale'
 
 let g:ale_lint_on_enter = 1
@@ -13,10 +14,10 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ OK']
 let g:ale_completion_enabled = 1
-let g:ale_disable_lsp = 1
+" let g:ale_disable_lsp = 1
 
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 1
 
 " let g:ale_open_list = 1
 " " Set this if you want to.
