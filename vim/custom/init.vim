@@ -24,9 +24,20 @@ let g:ale_auto_fix_on_save = 1
 " python2 path
 " let g:_python2_path = '/full/path/to/python2'
 " default: empty
-let g:_python2_path = '/usr/local/bin/python2'
+" let g:_python2_path = '/usr/local/bin/python2'
+let g:_python2_path = ''
 
 " python3 path
 " let g:_python3_path = '/full/path/to/python3'
 " default: use python3 install by brew
 let g:_python3_path = '/usr/local/bin/python3'
+
+" perl path
+let g:_perl_path = ''
+
+
+" node path
+let g:_node_path = '/usr/local/bin/neovim-node-host'
+
+" ruby path
+let g:_ruby_path = ''
