@@ -18,7 +18,7 @@ augroup file_set
 augroup end
 
 " ---> vim-go
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
 
 " ---> ale fixer
 if exists('g:ale_fixers')
