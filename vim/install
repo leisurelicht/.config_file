@@ -104,10 +104,17 @@ if [[ `uname -a` =~ "Darwin" ]]; then
   install_from_file $install_path/installs/go_install go get -u
 
 
-elif [[ `uname -a` =~ "ubuntu" ]]; then
+elif [[ `uname -a` =~ "Ubuntu" ]]; then
   echo "====> Use snap to intall necessary"
 
-  snap install nvim
+  snap install nvim --classic
+
+  if ! command -v curl >/dev/null 2>&1; then
+      echo "----> Use snap to install curl"
+      snap install curl
+  else
+      echo "----> Command curl is already installed"
+  fi
 
   if ! command -v ctags >/dev/null 2>&1; then
     echo "----> Use snap to install ctags"
@@ -118,7 +125,7 @@ elif [[ `uname -a` =~ "ubuntu" ]]; then
 
   if ! command -v /usr/bin/pip3 >/dev/null 2>&1; then
     echo "----> Command pip3 is not installed"
-    exit(0)
+    exit 0
   else
     echo "----> Command pip3 is already installed"
   fi
