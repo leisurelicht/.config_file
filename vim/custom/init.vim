@@ -29,8 +29,15 @@ let g:_python2_path = ''
 
 " python3 path
 " let g:_python3_path = '/full/path/to/python3'
-" default: use python3 install by brew
-let g:_python3_path = '/usr/local/bin/python3'
+" default: macos use python3 install by brew
+" defautl: linux use /use/bin/python3
+if utils#system#OSX()
+  let g:_python3_path = '/usr/local/bin/python3'
+elseif utils#system#LINUX()
+  let g:_python3_path = '/usr/bin/python3'
+else
+  echom 'UnSupported Operation System'
+endif
 
 " perl path
 " default: empty
