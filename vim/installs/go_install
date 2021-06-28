@@ -1,3 +1,2 @@
 mvdan.cc/sh/cmd/shfmt
 github.com/jackc/sqlfmt/...
-github.com/sourcegraph/go-langserver

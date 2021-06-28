@@ -4,6 +4,3 @@ jsonlint
 htmlhint
 write-good
 prettier
-bash-language-server
-vue-language-server
-javascript-typescript-langserver

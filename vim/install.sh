@@ -8,73 +8,6 @@ config_path=$(
 )
 echo "====> Config file root path is: ${config_path}"
 
-if ! command -v brew >/dev/null 2>&1; then
-  echo "====> Command brew is not be installed, start to install"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-  echo "====> Commnad brew is already installed"
-fi
-
-echo "====> Use brew to intall necessary"
-
-brew install vim --with-override-system-vi
-brew install neovim
-brew install fcitx-remote-for-osx --with-input-method=osx-pinyin
-brew tap homebrew/cask-fonts
-brew cask install font-hack-nerd-font
-
-if ! command -v ctags >/dev/null 2>&1; then
-  echo "----> Use brew to install ctags"
-  brew install ctags
-else
-  echo "----> Command ctags is already installed"
-fi
-
-if ! command -v $(brew --prefix)/bin/pip3 >/dev/null 2>&1; then
-  echo "----> Use brew to install pip3"
-  brew install python
-else
-  echo "----> Command pip3 is already installed"
-fi
-
-if ! command -v $(brew --prefix)/bin/pip2 >/dev/null 2>&1; then
-  echo "----> Use brew to install pip2"
-  brew install python@2
-else
-  echo "----> Command pip2 is already installed"
-fi
-
-if ! command -v yarn >/dev/null 2>&1; then
-  echo "----> Use brew to install yarn"
-  brew install node
-  brew install yarn
-else
-  echo "----> Command yarn is already installed"
-fi
-
-if ! command -v go >/dev/null 2>&1; then
-  echo "----> Use brew to install go"
-  brew install go
-else
-  echo "----> Command go is already installed"
-fi
-
-if ! command -v gem >/dev/null 2>&1; then
-  echo "----> Use brew to install gem"
-  brew install ruby
-else
-  echo "----> Command gem is already installed"
-fi
-
-pip3list=$($(brew --prefix)/bin/pip3 list | awk '{print $1}' | awk 'NR>2' | xargs echo)
-pip2list=$($(brew --prefix)/bin/pip2 list | awk '{print $1}' | awk 'NR>2' | xargs echo)
-if ! [[ $pip3list =~ 'neovim' || $pip2list =~ 'neovim' ]]; then
-  echo "----> Install neovim python client"
-  $(brew --prefix)/bin/pip3 install neovim
-else
-  echo "----> Neovim python client already installed"
-fi
-
 function install_from_file() {
   while read -r line; do
     if [[ ! $line =~ "#" ]]; then
@@ -84,22 +17,112 @@ function install_from_file() {
   done <$1
 }
 
-echo "====> Upgrade pip "
-$(brew --prefix)/bin/pip3 install --upgrade pip
-# $(brew --prefix)/bin/pip2 install --upgrade pip
 
-echo "====> Use pip to install package"
-$(brew --prefix)/bin/pip3 install --upgrade -r $install_path/installs/pip3_install
-# $(brew --prefix)/bin/pip2 install --upgrade -r $install_path/installs/pip2_install
+if [[ `uname -a` =~ "Darwin" ]]; then
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "====> Command brew is not be installed, start to install"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    echo "====> Commnad brew is already installed"
+  fi
 
-echo "====> Use gem to install package"
-install_from_file $install_path/installs/gem_install gem install
+  echo "====> Use brew to intall necessary"
 
-echo "====> Use yarn to install package"
-install_from_file $install_path/installs/yarn_install yarn install -g
+  brew install vim --with-override-system-vi
+  brew install neovim
+  brew install fcitx-remote-for-osx --with-input-method=osx-pinyin
+  brew tap homebrew/cask-fonts
+  brew cask install font-hack-nerd-font
 
-echo "====> Use go to install package"
-install_from_file $install_path/installs/go_install go get -u
+  if ! command -v ctags >/dev/null 2>&1; then
+    echo "----> Use brew to install ctags"
+    brew install ctags
+  else
+    echo "----> Command ctags is already installed"
+  fi
+
+  if ! command -v $(brew --prefix)/bin/pip3 >/dev/null 2>&1; then
+    echo "----> Use brew to install pip3"
+    brew install python
+  else
+    echo "----> Command pip3 is already installed"
+  fi
+
+  if ! command -v $(brew --prefix)/bin/pip2 >/dev/null 2>&1; then
+    echo "----> Use brew to install pip2"
+    brew install python@2
+  else
+    echo "----> Command pip2 is already installed"
+  fi
+
+  if ! command -v yarn >/dev/null 2>&1; then
+    echo "----> Use brew to install yarn"
+    brew install node
+    brew install yarn
+  else
+    echo "----> Command yarn is already installed"
+  fi
+
+  if ! command -v go >/dev/null 2>&1; then
+    echo "----> Use brew to install go"
+    brew install go
+  else
+    echo "----> Command go is already installed"
+  fi
+
+  if ! command -v gem >/dev/null 2>&1; then
+    echo "----> Use brew to install gem"
+    brew install ruby
+  else
+    echo "----> Command gem is already installed"
+  fi
+
+  pip3list=$($(brew --prefix)/bin/pip3 list | awk '{print $1}' | awk 'NR>2' | xargs echo)
+  pip2list=$($(brew --prefix)/bin/pip2 list | awk '{print $1}' | awk 'NR>2' | xargs echo)
+  if ! [[ $pip3list =~ 'neovim' || $pip2list =~ 'neovim' ]]; then
+    echo "----> Install neovim python client"
+    $(brew --prefix)/bin/pip3 install neovim
+  else
+    echo "----> Neovim python client already installed"
+  fi
+
+  echo "====> Upgrade pip "
+  $(brew --prefix)/bin/pip3 install --upgrade pip
+  # $(brew --prefix)/bin/pip2 install --upgrade pip
+
+  echo "====> Use pip to install package"
+  $(brew --prefix)/bin/pip3 install --upgrade -r $install_path/installs/pip3_install
+  # $(brew --prefix)/bin/pip2 install --upgrade -r $install_path/installs/pip2_install
+
+  echo "====> Use gem to install package"
+  install_from_file $install_path/installs/gem_install gem install
+
+  echo "====> Use yarn to install package"
+  install_from_file $install_path/installs/yarn_install yarn install -g
+
+  echo "====> Use go to install package"
+  install_from_file $install_path/installs/go_install go get -u
+
+
+elif [[ `uname -a` =~ "ubuntu" ]]; then
+  echo "====> Use snap to intall necessary"
+
+  snap install nvim
+
+  if ! command -v ctags >/dev/null 2>&1; then
+    echo "----> Use snap to install ctags"
+    snap install universal-ctags
+  else
+    echo "----> Command ctags is already installed"
+  fi
+
+  if ! command -v /usr/bin/pip3 >/dev/null 2>&1; then
+    echo "----> Command pip3 is not installed"
+    exit(0)
+  else
+    echo "----> Command pip3 is already installed"
+  fi
+fi
 
 echo "====> Create back up dir"
 
