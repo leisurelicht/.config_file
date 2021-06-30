@@ -141,18 +141,26 @@ fi
 if [ -f ~/.vimrc ]; then
   echo "====> Vim config file vimrc is exist, backup and delete it."
   mv ~/.vimrc $config_path/bak/vimrc.bak
+  rm ~/.vimrc >/dev/null 2>&1
 fi
+
 echo "====> Create vimrc link"
-rm ~/.vimrc >/dev/null 2>&1
 ln -s $config_path/vim/vimrc ~/.vimrc
 
 if [ ! -d ~/.config/ ]; then
   mkdir ~/.config/
 fi
 
+if [ ! -d ~/.vim ]; then
+    mkdir ~/.vim
+fi
+
+echo "====> Install vim PlugInstall"
+vim +PlugInstall +UpdateRemotePlugins +qa
+
 if [ -d ~/.config/nvim ]; then
-  echo "====> Neovim config dir nvim is exist, backup and delete it."
-  mv ~/.config/nvim $config_path/bak/nvim_bak
+    echo "====> Neovim config dir nvim is exist, backup and delete it."
+    mv ~/.config/nvim $config_path/bak/nvim_bak
 fi
 
 echo "====> Create neovim config file links"
@@ -164,8 +172,7 @@ echo "====> Create neovim init file links"
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 # 安装vim插件
-echo "====> Install vim PlugInstall"
+echo "====> Install nvim PlugInstall"
 nvim +PlugInstall +UpdateRemotePlugins +qa
-vim +PlugInstall +UpdateRemotePlugins +qa
 
 echo "**** Please change Non-ASCII Font to Hack Nerd Font ****"
